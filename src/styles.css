@@ -1,0 +1,26 @@
+.phrase {
+  font-size: 17px;
+  text-align: left;
+}
+
+.typingField {
+  font-size: 17px;
+  height: 130px;
+  border: 3px solid black;
+}
+
+.disabledField {
+  background-color: lightgray;
+}
+
+.icons {
+  vertical-align: middle;
+}
+
+.greenBorder {
+  border: 5px solid green;
+}
+
+.redBorder {
+  border: 5px solid red;
+}

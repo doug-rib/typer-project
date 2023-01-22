@@ -1,3 +1,5 @@
+$("#scoreboardButton").click(showScoreboard)
+
 const scoreboardInsert = () => {
   let tableBody = $(".scoreboard").find("tbody")
   let user = "Douglas"
@@ -6,10 +8,25 @@ const scoreboardInsert = () => {
   let line = newLine(user, numberOfWords)
   line.find(".removeButton").click(function(event) {
     event.preventDefault();
-    $(this).parent().parent().remove();
+    let line = $(this).parent().parent();
+    line.fadeOut(1000);
+    setTimeout(function(){
+      line.remove();
+    }, 1000)
+    
   })
 
   tableBody.append(line)
+  $(".scoreboard").slideDown(500)
+  scrollScoreboard()
+}
+
+const scrollScoreboard = () => {
+  let scoreboardPosition = $(".scoreboard").offset().top
+  $("html, body").animate(
+    {
+      scrollTop: scoreboardPosition
+    }, 1000)
 }
 
 const newLine = (user, numberOfWords) => {
@@ -28,4 +45,9 @@ const newLine = (user, numberOfWords) => {
   line.append(removeColumn)
 
   return line
+}
+
+function showScoreboard() {
+  $(".scoreboard").stop().slideToggle(800)
+  scrollScoreboard()
 }

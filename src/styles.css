@@ -1,3 +1,7 @@
+body {
+  overflow: scroll;
+}
+
 .phrase {
   font-size: 17px;
   text-align: left;
@@ -23,4 +27,8 @@
 
 .redBorder {
   border: 5px solid red;
+}
+
+.scoreboard {
+  display: none;
 }

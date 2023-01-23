@@ -1,6 +1,6 @@
 $("#scoreboardButton").click(showScoreboard)
 
-const scoreboardInsert = () => {
+function scoreboardInsert() {
   let tableBody = $(".scoreboard").find("tbody")
   let user = "Douglas"
   let numberOfWords = $("#wordCounter").text()
@@ -21,7 +21,7 @@ const scoreboardInsert = () => {
   scrollScoreboard()
 }
 
-const scrollScoreboard = () => {
+function scrollScoreboard() {
   let scoreboardPosition = $(".scoreboard").offset().top
   $("html, body").animate(
     {
@@ -29,7 +29,7 @@ const scrollScoreboard = () => {
     }, 1000)
 }
 
-const newLine = (user, numberOfWords) => {
+function newLine(user, numberOfWords) {
   let line = $("<tr>")
   let userColumn = $("<td>").text(user)
   let wordColumn = $("<td>").text(numberOfWords)

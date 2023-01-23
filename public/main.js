@@ -1,8 +1,8 @@
-const startTime = $("#typingTime").text()
+let startTime = $("#typingTime").text()
 let field = $(".typingField")
 
 // Essa funcão significa que após a página carregar o html irá rodar o que estiver aqui
-$(() => {
+$(function(){
   updatePhraseLength();
   initializeCounters();
   initializeStopwatch();
@@ -10,7 +10,12 @@ $(() => {
   $("#reloadButton").click(reloadGame)
 })
 
-const updatePhraseLength = () => {
+function updateStartTime(time) {
+  $("#typingTime").text(time)
+  startTime = time
+}
+
+function updatePhraseLength () {
   let phrase = $(".phrase").text();
   let numberOfWords = phrase.split(" ").length;
   let lenPhrase = $("#phraseLength")
@@ -18,7 +23,7 @@ const updatePhraseLength = () => {
   
 }
 
-const initializeCounters = () => {
+function initializeCounters () {
   field.on("input", () => {
     let content = field.val()
     let wordQuantity = content.split(/\S+/).length - 1
@@ -27,10 +32,10 @@ const initializeCounters = () => {
   })
 }
 
-const initializeStopwatch = () => {
+function initializeStopwatch () {
   $("#reloadButton").attr("disabled", true)
-  let timeLeft = $("#typingTime").text()
   field.one("focus", () => {
+    let timeLeft = $("#typingTime").text()
     let id = setInterval(() => {
       timeLeft--
       $("#typingTime").text(timeLeft)
@@ -43,14 +48,14 @@ const initializeStopwatch = () => {
   })
 }
 
-const endGame = () => {
+function endGame () {
   field.attr("disabled", true)
   $("#reloadButton").attr("disabled", false)
   field.toggleClass("disabledField")
   scoreboardInsert();
 }
 
-const reloadGame = () => {
+function reloadGame () {
   field.attr("disabled", false)
   field.val("")
   $("#charCounter").text("0")
@@ -62,9 +67,9 @@ const reloadGame = () => {
   field.removeClass("redBorder")
 }
 
-const initializeBorder = () => {
-  let phrase = $(".phrase").text()
+function initializeBorder () {
   field.on("input", () => {
+  let phrase = $(".phrase").text()
   let compare = phrase.slice(0, field.val().length)
   let typed = field.val()
 

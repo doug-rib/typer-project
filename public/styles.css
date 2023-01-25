@@ -32,3 +32,20 @@ body {
 .scoreboard {
   display: none;
 }
+
+#error {
+  color: red;
+  display: none;
+}
+
+#spinner {
+  display: none;
+}
+
+#idPhrase {
+  width: 6vh;
+}
+
+#syncButton {
+  float: right;
+}

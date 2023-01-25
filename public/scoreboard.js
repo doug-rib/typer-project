@@ -1,4 +1,5 @@
 $("#scoreboardButton").click(showScoreboard)
+$("#syncButton").click(scoreboardSync)
 
 function scoreboardInsert() {
   let tableBody = $(".scoreboard").find("tbody")
@@ -50,4 +51,29 @@ function newLine(user, numberOfWords) {
 function showScoreboard() {
   $(".scoreboard").stop().slideToggle(800)
   scrollScoreboard()
+}
+
+function scoreboardSync() {
+  let scoreboard = []
+  let lines = $("tbody>tr")
+
+  lines.each((index, td) => {
+    let user = $(td).find("td:nth-child(1)").text()
+    let words = $(td).find("td:nth-child(2)").text()
+    
+    let score = {
+      usuario: user,
+      pontos: words
+    }
+
+    scoreboard.push(score)
+  })
+
+  let data = {
+    placar: scoreboard
+  }
+
+  $.post("http://localhost:3000/placar", data, function() {
+    console.log("Dados salvos no servidor.");
+  })
 }

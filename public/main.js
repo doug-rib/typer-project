@@ -8,6 +8,8 @@ $(function(){
   initializeStopwatch();
   initializeBorder()
   $("#reloadButton").click(reloadGame)
+
+  updateScoreboard()
 })
 
 function updateStartTime(time) {

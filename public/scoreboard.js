@@ -77,3 +77,21 @@ function scoreboardSync() {
     console.log("Dados salvos no servidor.");
   })
 }
+
+function updateScoreboard() {
+  $.get("http://localhost:3000/placar", function(data) {
+    data.forEach((data) => {
+      let line = newLine(data.usuario, data.pontos)
+      line.find(".removeButton").click(function(event) {
+        event.preventDefault();
+        let line = $(this).parent().parent();
+        line.fadeOut(1000);
+        setTimeout(function(){
+          line.remove();
+        }, 1000)
+        
+      })
+      $("tbody").append(line)
+    })
+  })
+}

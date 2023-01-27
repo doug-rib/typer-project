@@ -3,9 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
+      integrity="sha512-pTaEn+6gF1IeWv3W1+7X7eM60TFu/agjgoHmYhAfLEU8Phuf6JKiiE8YmsNC0aCgQv4192s4Vai8YZ6VNM6vyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="stylesheet" href="./css/tooltipster.bundle.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alura Typer</title>
   </head>
@@ -37,11 +47,22 @@
 
       <div class="buttons">
         <a id="reloadButton" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">restore</i></a>
-        <a id="scoreboardButton" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">assignment</i></a>
+        <a id="scoreboardButton" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons" title="Mostrar placar">assignment</i></a>
         <a id="phraseButton" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">shuffle</i></a>
         <a id="phraseIdButton" class="btn-floating btn-large waves-effect waves-light cyan"><i class="material-icons">repeat_one</i></a>
         <input type="number" id="idPhrase" min="0">
-        <a id="syncButton" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons">swap_vert</i></a>
+
+        <div class="userSelect">
+          <select id="users">
+            <option value="Douglas">Douglas</option>
+            <option value="Guilherme">Guilherme</option>
+            <option value="Thatiane">Thatiane</option>
+            <option value="Regina">Regina</option>
+            <option value="Giovanna">Giovanna</option>
+          </select>
+        </div>
+
+        <a id="syncButton" class="tooltip btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons" title="Sincronizado com sucesso!">swap_vert</i></a>
       </div>
 
       <ul class="center">
@@ -70,8 +91,17 @@
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./main.js"></script>
-    <script src="./scoreboard.js"></script>
-    <script src="./phrase.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/js/selectize.min.js"
+      integrity="sha512-IOebNkvA/HZjMM7MxL0NYeLYEalloZ8ckak+NDtOViP7oiYzG5vn6WVXyrJDiJPhl4yRdmNAG49iuLmhkUdVsQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    
+    <script src="./js/main.js"></script>
+    <script src="./js/scoreboard.js"></script>
+    <script src="./js/phrase.js"></script>
+
+    <script src="./js/tooltipster.bundle.min.js"></script>
   </body>
 </html>

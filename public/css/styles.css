@@ -49,3 +49,20 @@ body {
 #syncButton {
   float: right;
 }
+
+.userSelect {
+  display: inline-block;
+}
+
+#users {
+  display: block;
+}
+
+.userName {
+  color: black;
+}
+
+.selectize-input {
+  vertical-align: middle;
+  width: 150px;
+}

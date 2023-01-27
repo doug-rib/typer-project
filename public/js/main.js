@@ -8,8 +8,24 @@ $(function(){
   initializeStopwatch();
   initializeBorder()
   $("#reloadButton").click(reloadGame)
-
+  
   updateScoreboard()
+
+  $('#users').selectize({
+    create: true,
+    sortField: {
+      field: 'text',
+      direction: 'asc'
+    }
+  });
+
+  $('.tooltip').tooltipster({
+    animation: 'fade',
+    delay: 200,
+    theme: 'tooltipster-default',
+    touchDevices: false,
+    trigger: 'hover'
+ })     
 })
 
 function updateStartTime(time) {

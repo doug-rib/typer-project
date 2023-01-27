@@ -3,7 +3,7 @@ $("#syncButton").click(scoreboardSync)
 
 function scoreboardInsert() {
   let tableBody = $(".scoreboard").find("tbody")
-  let user = "Douglas"
+  let user = $("#users").val()
   let numberOfWords = $("#wordCounter").text()
 
   let line = newLine(user, numberOfWords)

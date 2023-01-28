@@ -19,13 +19,7 @@ $(function(){
     }
   });
 
-  $('.tooltip').tooltipster({
-    animation: 'fade',
-    delay: 200,
-    theme: 'tooltipster-default',
-    touchDevices: false,
-    trigger: 'hover'
- })     
+  $('.tooltip').tooltipster()     
 })
 
 function updateStartTime(time) {

@@ -75,7 +75,14 @@ function scoreboardSync() {
 
   $.post("http://localhost:3000/placar", data, function() {
     console.log("Dados salvos no servidor.");
-  })
+    $("#syncButton .tooltip").tooltipster({trigger: "custom"}).tooltipster("open").tooltipster("content", "Sincronizado com sucesso.")
+  }).fail(function() {
+    $("#syncButton .tooltip").tooltipster({trigger: "custom"}).tooltipster("open").tooltipster("content", "Erro ao sincronizar.")
+  }).always(function() {
+    setTimeout(function() {
+      $("#syncButton .tooltip").tooltipster({trigger: "custom"}).tooltipster("close").tooltipster("content", "Salvar placar no servidor.")
+    }, 1500)
+  }) 
 }
 
 function updateScoreboard() {

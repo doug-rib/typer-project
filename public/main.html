@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.15.2/css/selectize.default.min.css"
@@ -15,7 +17,6 @@
     
     <link rel="stylesheet" href="./css/styles.css">
 
-    <link rel="stylesheet" href="./css/tooltipster.bundle.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alura Typer</title>
   </head>
@@ -46,13 +47,13 @@
       <textarea cols="30" rows="10" class="typingField"></textarea>
 
       <div class="buttons">
-        <a id="reloadButton" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">restore</i></a>
-        <a id="scoreboardButton" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons" title="Mostrar placar">assignment</i></a>
-        <a id="phraseButton" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">shuffle</i></a>
-        <a id="phraseIdButton" class="btn-floating btn-large waves-effect waves-light cyan"><i class="material-icons">repeat_one</i></a>
+        <a id="reloadButton" class="btn-floating btn-large waves-effect waves-light red"><i class="tooltip material-icons" title="Recarregar jogo..">restore</i></a>
+        <a id="scoreboardButton" class="btn-floating btn-large waves-effect waves-light green"><i class="tooltip material-icons" title="Mostrar placar.">assignment</i></a>
+        <a id="phraseButton" class="btn-floating btn-large waves-effect waves-light blue"><i class="tooltip material-icons" title="Trocar frase aleatória.">shuffle</i></a>
+        <a id="phraseIdButton" class="btn-floating btn-large waves-effect waves-light cyan"><i class="tooltip material-icons" title="Pegar frase específica no servidor.">repeat_one</i></a>
         <input type="number" id="idPhrase" min="0">
 
-        <div class="userSelect">
+        <div class="userSelect tooltip" title="Escolher jogador ou salvar novo.">
           <select id="users">
             <option value="Douglas">Douglas</option>
             <option value="Guilherme">Guilherme</option>
@@ -62,7 +63,7 @@
           </select>
         </div>
 
-        <a id="syncButton" class="tooltip btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons" title="Sincronizado com sucesso!">swap_vert</i></a>
+        <a id="syncButton" class="btn-floating btn-large waves-effect waves-light yellow"><i class="tooltip material-icons" title="Salvar placar no servidor.">swap_vert</i></a>
       </div>
 
       <ul class="center">
@@ -97,11 +98,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    
+    <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/scoreboard.js"></script>
     <script src="./js/phrase.js"></script>
-
-    <script src="./js/tooltipster.bundle.min.js"></script>
   </body>
 </html>
